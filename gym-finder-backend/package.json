@@ -4,6 +4,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon",
+    "dev:user": "nodemon --watch src/services/users --ext ts --exec npx ts-node src/services/users/index.ts",
+    "dev:gym": "nodemon --watch src/services/gyms --ext ts --exec npx ts-node src/services/gyms/index.ts",
+    "dev:post": "nodemon --watch src/services/posts --ext ts --exec npx ts-node src/services/posts/index.ts",
+    "dev:search": "nodemon --watch src/services/search --ext ts --exec npx ts-node src/services/search/index.ts",
     "build": "rimraf ./dist && tsc",
     "start": "npm run build && node ./dist/index.js"
   },
