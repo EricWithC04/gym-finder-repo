@@ -1,6 +1,10 @@
 import { Server } from "../../server";
 import { env } from "../../environments";
+import { connectDB } from "./config/connectDB";
 
 const server = new Server(env.USER_MODULE.PORT);
 
-server.start()
+connectDB()
+    .then(() => {
+        server.start()
+    })
